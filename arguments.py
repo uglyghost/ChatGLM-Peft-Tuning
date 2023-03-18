@@ -32,7 +32,7 @@ parser.add_argument("--logging_steps", type=int, default=50)                    
 parser.add_argument("--output_dir", type=str, default="output")                     # finetune模型 & checkpoint 存储目录
 
 '''infer.py 参数配置'''
-parser.add_argument("--peft_path", type=str, default="output/chatglm_lora.pt")       # finetune模型存储地址
+parser.add_argument("--peft_path", type=str, default="output/chatglm-lora.pt")       # finetune模型存储地址
 parser.add_argument("--max_length", type=int, default=512)                            # 最大输出长度
 parser.add_argument("--temperature", type=int, default=0)                             # 情感
 
