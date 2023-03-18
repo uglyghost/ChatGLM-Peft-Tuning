@@ -29,16 +29,15 @@ parser.add_argument("--save_steps", type=int, default=1000)                     
 parser.add_argument("--save_total_limit", type=int, default=2)                       # 保存条目数量上限
 parser.add_argument("--learning_rate", type=float, default=2e-5)                     # 模型学习率
 parser.add_argument("--logging_steps", type=int, default=50)                         # 日志输出间隔
-parser.add_argument("--output_dir ", type=str, default='output')                     # finetune模型 & checkpoint 存储目录
+parser.add_argument("--output_dir", type=str, default="output")                     # finetune模型 & checkpoint 存储目录
 
 '''infer.py 参数配置'''
-parser.add_argument("--peft_path ", type=str, default='output/chatglm-lora.pt')       # finetune模型存储地址
+parser.add_argument("--peft_path", type=str, default="output/chatglm_lora.pt")       # finetune模型存储地址
 parser.add_argument("--max_length", type=int, default=512)                            # 最大输出长度
 parser.add_argument("--temperature", type=int, default=0)                             # 情感
 
-# 解析ArgumentParser对象，获得argparse.Namespace对象
-args = parser.parse_args()
-
 
 def get_args():
-    return parser.parse_args()
+    # 解析ArgumentParser对象，获得argparse.Namespace对象
+    arguments = parser.parse_args()
+    return arguments

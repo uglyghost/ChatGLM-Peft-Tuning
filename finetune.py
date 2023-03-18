@@ -99,7 +99,7 @@ def main():
     trainer.train()  # 调用train方法进行训练
 
     # 保存训练后的模型参数到指定路径下的文件中
-    save_tunable_parameters(model, os.path.join(args.output_dir, "chatglm-lora.pt"))
+    save_tunable_parameters(model, os.path.join(args.output_dir, "chatglm_lora.pt"))
 
 
 if __name__ == "__main__":
