@@ -74,7 +74,7 @@ python tokenize_dataset_rows.py
 ## Finetune
 
 ```bash
-python finetune.py
+python finetune.py --save_total_limit 2  --dataset_path data/alpaca --lora_rank 8 --per_device_train_batch_size 1  --gradient_accumulation_steps 1 --max_steps 52000 --save_steps 1000 --learning_rate 2e-5 --logging_steps 50 --output_dir output
 ```
 
 配置参数见 `arguments.py` '''finetune.py 参数配置''' 

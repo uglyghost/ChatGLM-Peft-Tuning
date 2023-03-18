@@ -1,4 +1,5 @@
-from transformers import Trainer
+from transformers import TrainingArguments
+from transformers import Trainer, HfArgumentParser
 from modeling_chatglm import ChatGLMForConditionalGeneration
 import torch
 import torch.nn as nn
@@ -53,6 +54,9 @@ def main():
     # 解析命令行参数并赋值给args变量
     args = get_args()
 
+    finetune_args, training_args = HfArgumentParser(
+        (FinetuneArguments, TrainingArguments)).parse_args_into_dataclasses()
+
     # 从预训练模型"THUDM/chatglm-6b"加载模型，并设置一些参数
     model = ChatGLMForConditionalGeneration.from_pretrained(
         "THUDM/chatglm-6b",
@@ -92,7 +96,7 @@ def main():
     trainer = ModifiedTrainer(
         model=model,
         train_dataset=dataset,
-        args=args,
+        args=training_args,
         data_collator=data_collator,
 
     )

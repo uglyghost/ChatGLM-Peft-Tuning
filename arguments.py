@@ -6,13 +6,13 @@ parser = argparse.ArgumentParser(description="ChatGLM model fine-tuning")
 
 '''tokenize_dataset_rows.py 参数配置'''
 # 对微调数据集做预处理，tokenized -> convert to json -> save to binary file.
-parser.add_argument("--jsonl_path", type=str, default="data/change_name.jsonl.txt")  # json格式的数据集
+parser.add_argument("--jsonl_path", type=str, default="data/change_name.jsonl")  # json格式的数据集
 parser.add_argument("--save_path", type=str, default="data/alpaca")                  # 用于训练数据集的存储路径
 parser.add_argument("--max_seq_length", type=int, default=512)                       # 样本文本的最大长度
 
 '''finetune.py 参数配置'''
 # training
-parser.add_argument("--continue_training", type=bool, default=True)                  # 是否在微调模型上继续训练
+parser.add_argument("--continue_training", type=bool, default=False)                  # 是否在微调模型上继续训练
 parser.add_argument("--checkpoint_enable", type=bool, default=True)                  # 是否开启checkpoint功能
 parser.add_argument("--grads_enable", type=bool, default=True)                       # 启用输入梯度计算功能，支持高阶导数
 
