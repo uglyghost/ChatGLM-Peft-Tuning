@@ -24,7 +24,7 @@
 
 
 - 解决方法:
-  1. put `libbitsandbytes_cuda116.dll` in 
+  1. put [libbitsandbytes_cuda116.dll](https://github.com/DeXtmL/bitsandbytes-win-prebuilt/blob/main/libbitsandbytes_cuda116.dll) in 
       
      `C:\Users\xxx\miniconda3\envs\textgen\lib\site-packages\bitsandbytes\`
   2. edit `\bitsandbytes\cuda_setup\main.py`. search for:
